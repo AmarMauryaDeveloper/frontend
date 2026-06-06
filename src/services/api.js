@@ -13,8 +13,10 @@ export const setAccessToken = (token) => {
 
 export const getAccessToken = () => accessToken;
 
+const BACKEND_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
+
 const api = axios.create({
-  baseURL: '/api',
+  baseURL: `${BACKEND_URL}/api`,
   headers: {
     'Content-Type': 'application/json',
   },
@@ -86,7 +88,7 @@ api.interceptors.response.use(
       return new Promise(function (resolve, reject) {
         // Attempt to call the refresh endpoint
         axios
-          .post('/api/auth/refresh', {}, { withCredentials: true })
+          .post(`${BACKEND_URL}/api/auth/refresh`, {}, { withCredentials: true })
           .then(({ data }) => {
             if (data.success && data.accessToken) {
               setAccessToken(data.accessToken);

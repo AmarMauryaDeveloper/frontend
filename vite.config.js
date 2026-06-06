@@ -10,11 +10,13 @@ export default defineConfig({
     proxy: {
       "/api": {
         target: "https://backend-e1r4.onrender.com",
+        // target: "http://localhost:5001",
         changeOrigin: true,
         secure: false,
       },
       "/uploads": {
         target: "https://backend-e1r4.onrender.com",
+        // target: "http://localhost:5001",
         changeOrigin: true,
         secure: false,
       },
