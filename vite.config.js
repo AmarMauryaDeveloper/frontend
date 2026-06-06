@@ -1,6 +1,6 @@
-const hostUrl = process.env.VITE_API_URL || 'http://localhost:5001';
-import { defineConfig } from 'vite';
-import react from '@vitejs/plugin-react';
+const hostUrl = process.env.VITE_API_URL;
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
@@ -8,18 +8,18 @@ export default defineConfig({
     port: 3000,
     host: true,
     proxy: {
-      '/api': {
-        target: hostUrl,
+      "/api": {
+        target: "https://backend-e1r4.onrender.com",
         changeOrigin: true,
         secure: false,
       },
-      '/uploads': {
-        target: hostUrl,
+      "/uploads": {
+        target: "https://backend-e1r4.onrender.com",
         changeOrigin: true,
         secure: false,
       },
-      '/socket.io': {
-        target: hostUrl,
+      "/socket.io": {
+        target: "https://backend-e1r4.onrender.com",
         ws: true,
         changeOrigin: true,
         secure: false,
