@@ -1,6 +1,6 @@
-import React from 'react';
-import { Navigate, Outlet } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import React from "react";
+import { Navigate, Outlet } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const AuthLayout = () => {
   const { isAuthenticated } = useSelector((state) => state.auth);
@@ -18,11 +18,16 @@ const AuthLayout = () => {
       <div className="w-full max-w-md bg-white/70 dark:bg-slate-900/60 backdrop-blur-md border border-slate-200/50 dark:border-slate-800/40 rounded-2xl shadow-xl p-8 hover-glow">
         <div className="flex flex-col items-center mb-8">
           <div className="flex items-center space-x-2">
-            <svg className="w-8 h-8 text-brand-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z"/>
+            <svg
+              className="w-8 h-8 text-brand-500"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+            >
+              <path d="M3 3h18v18H3V3zm2 2v14h14V5H5zm2 2h10v2H7V7zm0 4h10v2H7v-2zm0 4h7v2H7v-2z" />
             </svg>
             <span className="font-extrabold text-2xl tracking-tight bg-gradient-to-r from-brand-600 to-indigo-600 dark:from-brand-400 dark:to-indigo-400 bg-clip-text text-transparent">
-              Flow SaaS
+              PPM System
             </span>
           </div>
           <p className="text-slate-500 dark:text-slate-400 text-sm mt-2">
